@@ -1,23 +1,40 @@
 # 基本的な操作方法
 
+<br>
+
 ## ターミナルで新しいフォルダを作る
 
-- 新しいフォルダを作成する
-- mkdir my-first-website
-  →my-first-websiteという名前のフォルダが作成される
-- 今作ったフォルダの中に移動する
-  　cd my-first-website
+1. **新しいフォルダを作成する**
 
-2. GitとGitHubの準備
+- 以下のコマンドで、`my-first-website`という名前のフォルダが作成される。
+  ```sh
+  mkdir #my-first-website
+  ```
+- 今作ったフォルダの中に移動する
+  ```sh
+  cd my-first-website
+  ```
+
+2. **GitとGitHubの準備**
 
 - Gitがインストールされているか確認する
-  　git --version　　※バージョンが表示されたらOK
-- Gitの名前を設定
-  　git config --global user.name"Your Name"
-- Gitのメールアドレスを設定
-  　git config --global user.email "Your.email@example.com"
+  ※バージョンが表示されたらOK
 
-3. リモートリポジトリを作る
+  ```sh
+  　git --version
+  ```
+- Gitの名前を設定
+
+  ```sh
+  　git config --global user.name"Your Name"
+  ```
+- Gitのメールアドレスを設定
+
+  ```sh
+  　git config --global user.email "Your.email@example.com"
+  ```
+
+3. **リモートリポジトリを作る**
 
 - GitHubにログイン
 - 右上の「+」マークをクリック → 「New repository」を選択
@@ -28,43 +45,81 @@
   　　他のチェックボックスは全て外す（重要！）
   　　「Create repository」をクリック
 
-4. リモートリポジトリを作る
+4. **リモートリポジトリを作る**
 
-- ターミナルに戻って、現在のフォルダをGitリポジトリにする
-  　git init　※「Initialized empty Git repository」と表示されたら成功
+- ターミナルに戻って、現在のフォルダをGitリポジトリにする。
+  ※「Initialized empty Git repository」と表示されたら成功
+  ```sh
+  　git init
+  ```
 
-5. リモートとローカルを紐づける
+5. **リモートとローカルを紐づける**
 
 - GitHubのページに表示されているURLをコピーして、以下のコマンドを実行
+  ```sh
   　git remote add origin https://github.com/あなたのユーザー名/my-first-website.git
+  ```
 - 確認する
-  　git remote -v　　※originという名前でURLが登録されていれば成功
+  ※originという名前でURLが登録されていれば成功
+  ```sh
+  　git remote -v
+  ```
 
-6. HTMLファイルを作る
+6. **HTMLファイルを作る**
 
 - index.htmlファイルを作成
+  ```sh
   　echo '`<!DOCTYPE html>`' > index.html
+  ```
 - テキストエディタでファイルを編集する
+  ```sh
   　open index.html
-- 以下のHTMLコードをコピー・貼り付け・保存（ctrl+s）| `<!DOCTYPE html><br />``<html lang="ja"><br />``<br /><head>``<br />`  `<meta charset="utf-8"><br />`  `<meta name="viewport" content="width=device-width, initial-scale=1"><br />`  `<title>`初めてのウェブページ `</title><br />``</head><br />``<br /><body>``<br />`  `<p>`これは私が初めて作ったウェブページです。`</p><br />``</body><br />``<br /></html>` |
-  | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+  ```
+- 以下のHTMLコードをコピー・貼り付け・保存（ctrl+s）
+  ```html
 
-7. コミットとプッシュ
+  ```
+
+| `<!DOCTYPE html><br />``<html lang="ja"><br />``<br /><head>``<br />`  `<meta charset="utf-8"><br />`  `<meta name="viewport" content="width=device-width, initial-scale=1"><br />`  `<title>`初めてのウェブページ `</title><br />``</head><br />``<br /><body>``<br />`  `<p>`これは私が初めて作ったウェブページです。`</p><br />``</body><br />``<br /></html>` |
+  |
+
+```:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+```
+
+7. **コミットとプッシュ**
 
 - 変更されたファイルを確認する
-  　git status　　※赤い文字で「index.html」が表示される
+  ※赤い文字で「index.html」が表示される
+  ```sh
+  　git status
+  ```
 - 変更したindex.htmlをステージに追加
-  　git add index.html
-- 状態を確認
-  　git status　　※今度は緑色で「index.html」が表示される
-- コミット（保存）する
-  　git commit -m "最初のホームページを作成"
-- GitHubにmainブランチを作成
-  　　git branch -M main
-- - GitHubにプッシュ（アップロード）する
-    　　git push -u origin main
 
-8. GitHub Pagesで公開する
+```sh
+  　git add index.html
+```
+
+- 状態を確認
+  ※今度は緑色で「index.html」が表示される
+  ```sh
+  　git status
+  ```
+- コミット（保存）する
+  ```sh
+  　git commit -m "最初のホームページを作成"
+  ```
+- GitHubにmainブランチを作成
+  ```sh
+  　　git branch -M main
+  ```
+- - GitHubにプッシュ（アップロード）する
+
+  ```sh
+  git push -u origin main
+  ```
+
+8. **GitHub Pagesで公開する**
    GitHub Pagesを有効にする
 
 - GitHubの自分のリポジトリページを開く
