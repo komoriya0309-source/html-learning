@@ -1,4 +1,4 @@
-# 基本的な操作方法
+# Githubにプッシュするまでの基本的な操作方法
 
 <br>
 
@@ -56,60 +56,78 @@
 5. **リモートとローカルを紐づける**
 
 - GitHubのページに表示されているURLをコピーして、以下のコマンドを実行
+
   ```sh
-  　git remote add origin https://github.com/あなたのユーザー名/my-first-website.git
+  　git remote add origin git@github.com:komoriya0309-source/markdown-learning
   ```
+
+  ※komoriya0309-source：ユーザー名
+  ※markdown-learning：リポジトリ名
 - 確認する
   ※originという名前でURLが登録されていれば成功
+
   ```sh
   　git remote -v
   ```
 
 6. **HTMLファイルを作る**
 
-- index.htmlファイルを作成
-  ```sh
-  　echo '`<!DOCTYPE html>`' > index.html
-  ```
-- テキストエディタでファイルを編集する
-  ```sh
-  　open index.html
-  ```
+- ターミナルで以下入力
+
+```zsh
+touch #README.md
+```
+
+- 作成したファイルをVisual Studio Codeで開く
+
+```zsh
+code #README.md
+```
+
 - 以下のHTMLコードをコピー・貼り付け・保存（ctrl+s）
   ```html
+  <!DOCTYPE html>
+  <html lang="ja">
 
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>初めてのウェブページ</title>
+  </head>
+
+  <body>
+  <p>これは学習２日目に作ったウェブページです。</p>
+  </body>
+
+  </html>
   ```
-
-| `<!DOCTYPE html><br />``<html lang="ja"><br />``<br /><head>``<br />`  `<meta charset="utf-8"><br />`  `<meta name="viewport" content="width=device-width, initial-scale=1"><br />`  `<title>`初めてのウェブページ `</title><br />``</head><br />``<br /><body>``<br />`  `<p>`これは私が初めて作ったウェブページです。`</p><br />``</body><br />``<br /></html>` |
-  |
-
-```:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-```
 
 7. **コミットとプッシュ**
 
 - 変更されたファイルを確認する
   ※赤い文字で「index.html」が表示される
+
   ```sh
   　git status
   ```
 - 変更したindex.htmlをステージに追加
 
-```sh
+  ```sh
   　git add index.html
-```
-
+  ```
 - 状態を確認
   ※今度は緑色で「index.html」が表示される
+
   ```sh
   　git status
   ```
-- コミット（保存）する
+- コミット（保存）する `-m`でメッセージをつける
+
   ```sh
   　git commit -m "最初のホームページを作成"
   ```
 - GitHubにmainブランチを作成
+
   ```sh
   　　git branch -M main
   ```
